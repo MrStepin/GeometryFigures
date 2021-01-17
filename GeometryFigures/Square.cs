@@ -8,7 +8,7 @@ namespace GeometryFigures
 {
     class Square : Shape
     {
-        internal double Side { get; set; }
+        double Side { get; set; }
 
 
         internal Square(double side)

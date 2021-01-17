@@ -11,7 +11,7 @@ namespace GeometryFigures
     class Circle : Shape
     {
         
-        internal double Radius { get; set; }
+        double Radius { get; set; }
         double Pi = 3.14;
 
         internal Circle(double radius)

@@ -8,8 +8,8 @@ namespace GeometryFigures
 {
     class Triangle : Shape
     {
-        internal double a { get; set; }
-        internal double h { get; set; }
+         double a { get; set; }
+        double h { get; set; }
 
 
 

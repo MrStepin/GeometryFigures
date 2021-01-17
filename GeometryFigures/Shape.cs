@@ -9,17 +9,17 @@ namespace GeometryFigures
 {
     abstract class Shape
     {
+        public int X { get; set; }
+        public int Y { get; set; }
+
         internal abstract double Area();
 
-        public void ChangeCoordinates(int x, int y)
+        public (int, int) ChangeCoordinates(int x, int y)
         {
-            x += 5;
-            y += 5;
-        }
+            X += x;
+            Y += y;
+            return (X, Y);
 
-        public void AddFigure()
-        {
-         Console.WriteLine("Done");
         }
 
     }
