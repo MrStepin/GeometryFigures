@@ -20,13 +20,24 @@ namespace GeometryFigures
             Console.WriteLine("Input height of triangle and click 'Enter':\nFor example 23,6");
             double userH = Convert.ToDouble(Console.ReadLine());
 
+            List<Shape> figures = new List<Shape>() { };
 
-            Editor ListOfFigures = new Editor();
+
+            Editor addFigure = new Editor();
+            Console.WriteLine("Method for adding figure:");
+            Triangle triangle = new Triangle(userA, userH);
+            Square square = new Square(userSide);
+            Circle circle = new Circle(userRadius);
+            Line line = new Line();
+            addFigure.AddFigure(triangle, figures);
+            addFigure.AddFigure(square, figures);
+            addFigure.AddFigure(circle, figures);
+            addFigure.AddFigure(line, figures);
 
 
             Console.WriteLine("List of figures:");
             int num = 1;
-            foreach (var figure in ListOfFigures.ListOfShapes(userA, userH, userSide, userRadius))
+            foreach (var figure in figures)
             {
                 Console.WriteLine(num + ". " + figure);
                 num += 1;
@@ -35,7 +46,7 @@ namespace GeometryFigures
 
             double sumOfAreas = 0;
             Console.WriteLine("sum of areas is:");
-            foreach (var figure in ListOfFigures.ListOfShapes(userA, userH, userSide, userRadius))
+            foreach (var figure in figures)
             {
                 double figureArea = figure.Area();
                 sumOfAreas += figureArea;
@@ -43,23 +54,17 @@ namespace GeometryFigures
             Console.WriteLine(sumOfAreas);
 
 
-            Editor newFigure = new Editor();
-            Editor addFigure = newFigure;
-            Console.WriteLine("Method for adding figure:");
-            addFigure.AddFigure(ListOfFigures.ListOfShapes(userA, userH, userSide, userRadius));
-
-
             Editor moveFigure = new Editor();
-            foreach (var shape in ListOfFigures.ListOfShapes(userA, userH, userSide, userRadius))
+            foreach (var shape in figures)
             {
-                moveFigure.MoveAllFigures(ListOfFigures.ListOfShapes(userA, userH, userSide, userRadius));
+                moveFigure.MoveAllFigures(figures);
             }
-                    
-            
 
+
+            Editor removeFigure = new Editor();
             Console.WriteLine("If you need to remove figure, enter number:");
             int numberOfFigure = Convert.ToInt32(Console.ReadLine());
-            ListOfFigures.ListOfShapes(userA, userH, userSide, userRadius).RemoveAt(numberOfFigure);
+            removeFigure.RemoveFigure(numberOfFigure, figures);
 
 
             Console.ReadKey();

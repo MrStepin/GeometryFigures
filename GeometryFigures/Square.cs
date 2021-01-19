@@ -11,12 +11,12 @@ namespace GeometryFigures
         double Side { get; set; }
 
 
-        internal Square(double side)
+        public Square(double side)
         {
             Side = side;
         }
 
-        internal override double Area()
+        public override double Area()
         {
             return Math.Pow(Side, 2);
         }

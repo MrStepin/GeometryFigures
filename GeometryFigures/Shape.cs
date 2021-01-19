@@ -12,7 +12,7 @@ namespace GeometryFigures
         public int X { get; set; }
         public int Y { get; set; }
 
-        internal abstract double Area();
+        public abstract double Area();
 
         public (int, int) ChangeCoordinates(int x, int y)
         {

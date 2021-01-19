@@ -13,13 +13,13 @@ namespace GeometryFigures
 
 
 
-        internal Triangle(double A, double H)
+        public Triangle(double A, double H)
         {
             a = A;
             h = H;
         }
 
-        internal override double Area()
+        public override double Area()
         {
             return (a*h)/2;
         }

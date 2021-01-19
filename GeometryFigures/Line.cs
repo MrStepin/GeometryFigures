@@ -10,7 +10,7 @@ namespace GeometryFigures
     {
 
 
-        internal override double Area()
+        public override double Area()
         {
             return 0;
         }

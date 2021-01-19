@@ -14,12 +14,12 @@ namespace GeometryFigures
         double Radius { get; set; }
         double Pi = 3.14;
 
-        internal Circle(double radius)
+        public Circle(double radius)
         {
             Radius = radius;
         }
 
-        internal override double Area()
+        public override double Area()
         {
             return Pi * Math.Pow(Radius, 2);
         }

@@ -8,31 +8,25 @@ namespace GeometryFigures
 {
     class Editor
     {
-        public List<GeometryFigures.Shape> ListOfShapes(double userA, double userH, double userSide, double userRadius)
-        {
-            List<Shape> figures = new List<Shape>() { };
-            figures.Add(new Triangle(userA, userH));
-            figures.Add(new Square(userSide));
-            figures.Add(new Circle(userRadius));
-            figures.Add(new Line());
 
-            return figures;
+        public void AddFigure(Shape newFigure, List<Shape> figures)
+        {
+            
+            figures.Add(newFigure);
+
         }
 
-
-        public void AddFigure(List<GeometryFigures.Shape> ListOfShapes)
+        public void MoveAllFigures(List<Shape> figures)
         {
-            GeometryFigures.Shape figure = null;
-            ListOfShapes.Add(figure);
-            Console.WriteLine("Done");
-        }
-
-        public void MoveAllFigures(List<GeometryFigures.Shape> listOfShapes)
-        {
-            foreach (var figure in listOfShapes)
+            foreach (var figure in figures)
             
                 figure.ChangeCoordinates(5, 0);
             
+        }
+
+        public void RemoveFigure(int numberOfFigure, List<Shape> figures)
+        {
+            figures.RemoveAt(numberOfFigure);
         }
 
     }
