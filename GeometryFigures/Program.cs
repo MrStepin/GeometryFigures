@@ -23,48 +23,32 @@ namespace GeometryFigures
             List<Shape> figures = new List<Shape>() { };
 
 
-            Editor addFigure = new Editor();
+            Editor editor = new Editor();
             Console.WriteLine("Method for adding figure:");
             Triangle triangle = new Triangle(userA, userH);
             Square square = new Square(userSide);
             Circle circle = new Circle(userRadius);
             Line line = new Line();
-            addFigure.AddFigure(triangle, figures);
-            addFigure.AddFigure(square, figures);
-            addFigure.AddFigure(circle, figures);
-            addFigure.AddFigure(line, figures);
+            editor.AddFigure(triangle, figures);
+            editor.AddFigure(square, figures);
+            editor.AddFigure(circle, figures);
+            editor.AddFigure(line, figures);
 
 
             Console.WriteLine("List of figures:");
-            int num = 1;
-            foreach (var figure in figures)
-            {
-                Console.WriteLine(num + ". " + figure);
-                num += 1;
-            }
+            editor.ListOfFigures(figures);
 
 
-            double sumOfAreas = 0;
             Console.WriteLine("sum of areas is:");
-            foreach (var figure in figures)
-            {
-                double figureArea = figure.Area();
-                sumOfAreas += figureArea;
-            }
-            Console.WriteLine(sumOfAreas);
+            editor.SumOfAreas(figures);
 
 
-            Editor moveFigure = new Editor();
-            foreach (var shape in figures)
-            {
-                moveFigure.MoveAllFigures(figures);
-            }
+            editor.MoveAllFigures(figures);
 
 
-            Editor removeFigure = new Editor();
             Console.WriteLine("If you need to remove figure, enter number:");
             int numberOfFigure = Convert.ToInt32(Console.ReadLine());
-            removeFigure.RemoveFigure(numberOfFigure, figures);
+            editor.RemoveFigure(numberOfFigure, figures);
 
 
             Console.ReadKey();
