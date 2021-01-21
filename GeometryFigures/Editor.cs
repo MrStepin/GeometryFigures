@@ -10,14 +10,19 @@ namespace GeometryFigures
     {
         private List<Shape> _figures;
 
-        public void AddFigure(Shape newFigure, List<Shape> _figures)
+        public Editor()
+        {
+             _figures = new List<Shape> { };
+        }
+
+        public void AddFigure(Shape newFigure)
         {
             
             _figures.Add(newFigure);
 
         }
 
-        public void MoveAllFigures(List<Shape> _figures)
+        public void MoveAllFigures()
         {
             foreach (var figure in _figures)
             
@@ -25,13 +30,13 @@ namespace GeometryFigures
             
         }
 
-        public void RemoveFigure(int numberOfFigure, List<Shape> _figures)
+        public void RemoveFigure(int numberOfFigure)
         {
             _figures.RemoveAt(numberOfFigure);
         }
 
 
-        public void SumOfAreas(List<Shape> _figures)
+        public void SumOfAreas()
         {
             double sumOfAreas = 0;
             foreach (var figure in _figures)
@@ -42,7 +47,7 @@ namespace GeometryFigures
             Console.WriteLine(sumOfAreas);
         }
 
-        public void ListOfFigures(List<Shape> _figures)
+        public void ListOfFigures()
         {
             int num = 1;
             foreach (var figure in _figures)

@@ -20,8 +20,6 @@ namespace GeometryFigures
             Console.WriteLine("Input height of triangle and click 'Enter':\nFor example 23,6");
             double userH = Convert.ToDouble(Console.ReadLine());
 
-            List<Shape> figures = new List<Shape>() { };
-
 
             Editor editor = new Editor();
             Console.WriteLine("Method for adding figure:");
@@ -29,26 +27,26 @@ namespace GeometryFigures
             Square square = new Square(userSide);
             Circle circle = new Circle(userRadius);
             Line line = new Line();
-            editor.AddFigure(triangle, figures);
-            editor.AddFigure(square, figures);
-            editor.AddFigure(circle, figures);
-            editor.AddFigure(line, figures);
+            editor.AddFigure(triangle);
+            editor.AddFigure(square);
+            editor.AddFigure(circle);
+            editor.AddFigure(line);
 
 
             Console.WriteLine("List of figures:");
-            editor.ListOfFigures(figures);
+            editor.ListOfFigures();
 
 
             Console.WriteLine("sum of areas is:");
-            editor.SumOfAreas(figures);
+            editor.SumOfAreas();
 
 
-            editor.MoveAllFigures(figures);
+            editor.MoveAllFigures();
 
 
             Console.WriteLine("If you need to remove figure, enter number:");
             int numberOfFigure = Convert.ToInt32(Console.ReadLine());
-            editor.RemoveFigure(numberOfFigure, figures);
+            editor.RemoveFigure(numberOfFigure);
 
 
             Console.ReadKey();
